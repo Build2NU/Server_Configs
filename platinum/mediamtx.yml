@@ -102,9 +102,9 @@ multicastRTCPPort: 8003
 # This can be generated with:
 # openssl genrsa -out server.key 2048
 # openssl req -new -x509 -sha256 -key server.key -out server.crt -days 3650
-serverKey: server.key
+serverKey: /root/mediamtx/server.key
 # Path to the server certificate. This is needed only when encryption is "strict" or "optional".
-serverCert: server.crt
+serverCert: /root/mediamtx/server.crt
 # Authentication methods. Available are "basic" and "digest".
 # "digest" doesn't provide any additional security and is available for compatibility reasons only.
 authMethods: [basic]
@@ -125,9 +125,9 @@ rtmpsAddress: :1936
 # This can be generated with:
 # openssl genrsa -out server.key 2048
 # openssl req -new -x509 -sha256 -key server.key -out server.crt -days 3650
-rtmpServerKey: server.key
+rtmpServerKey: /root/mediamtx/server.key
 # Path to the server certificate. This is needed only when encryption is "strict" or "optional".
-rtmpServerCert: server.crt
+rtmpServerCert: /root/mediamtx/server.crt
 
 ###############################################
 # Global settings -> HLS server
@@ -143,9 +143,9 @@ hlsEncryption: no
 # This can be generated with:
 # openssl genrsa -out server.key 2048
 # openssl req -new -x509 -sha256 -key server.key -out server.crt -days 3650
-hlsServerKey: server.key
+hlsServerKey: /root/mediamtx/server.key
 # Path to the server certificate.
-hlsServerCert: server.crt
+hlsServerCert: /root/mediamtx/server.crt
 # By default, HLS is generated only when requested by a user.
 # This option allows to generate it always, avoiding the delay between request and generation.
 hlsAlwaysRemux: no
@@ -193,14 +193,14 @@ webrtc: yes
 # Address of the WebRTC HTTP listener.
 webrtcAddress: :8889
 # Enable TLS/HTTPS on the WebRTC server.
-webrtcEncryption: no
+webrtcEncryption: yes
 # Path to the server key.
 # This can be generated with:
 # openssl genrsa -out server.key 2048
 # openssl req -new -x509 -sha256 -key server.key -out server.crt -days 3650
-webrtcServerKey: server.key
+webrtcServerKey: /root/mediamtx/server.key
 # Path to the server certificate.
-webrtcServerCert: server.crt
+webrtcServerCert: /root/mediamtx/server.crt
 # Value of the Access-Control-Allow-Origin header provided in every HTTP response.
 # This allows to play the WebRTC stream from an external website.
 webrtcAllowOrigin: '*'
