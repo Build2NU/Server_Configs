@@ -559,13 +559,10 @@ paths:
   # Settings under path "all_others" are applied to all paths that
   # do not match another entry.
     
-  ~_srt$:
+  ~_stream$:
     runOnReady: >
         ffmpeg -i rtsp://127.0.0.1:$RTSP_PORT/$MTX_PATH -vcodec copy -c:a libopus -async 24 -ar 48000 -f rtsp rtsp://127.0.0.1:$RTSP_PORT/$MTX_PATH/monitor
-  ~_webrtc$:
+  ~_web$:
     runOnReady: >
-        ffmpeg -i rtsp://127.0.0.1:$RTSP_PORT/$MTX_PATH -vcodec copy -c:a aac -b:a 320k -async 24 -ar 48000 -f rtsp rtsp://127.0.0.1:$RTSP_PORT/$MTX_PATH/srt_output
-  ~_rtmp$:
-    runOnReady: >
-        ffmpeg -i rtsp://127.0.0.1:$RTSP_PORT/$MTX_PATH -vcodec copy -c:a libopus -async 24 -ar 48000 -f rtsp rtsp://127.0.0.1:$RTSP_PORT/$MTX_PATH/monitor
+        ffmpeg -i rtsp://127.0.0.1:$RTSP_PORT/$MTX_PATH -vcodec copy -c:a aac -b:a 320k -async 24 -ar 48000 -f rtsp rtsp://127.0.0.1:$RTSP_PORT/$MTX_PATH
   all_others:
