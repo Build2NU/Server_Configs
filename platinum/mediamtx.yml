@@ -198,9 +198,9 @@ webrtcEncryption: yes
 # This can be generated with:
 # openssl genrsa -out server.key 2048
 # openssl req -new -x509 -sha256 -key server.key -out server.crt -days 3650
-webrtcServerKey: /root/mediamtx/server.key
+webrtcServerKey: /etc/letsencrypt/live/testserver.2nuproductions.com/privkey.pem
 # Path to the server certificate.
-webrtcServerCert: /root/mediamtx/server.crt
+webrtcServerCert: /etc/letsencrypt/live/testserver.2nuproductions.com/fullchain.pem
 # Value of the Access-Control-Allow-Origin header provided in every HTTP response.
 # This allows to play the WebRTC stream from an external website.
 webrtcAllowOrigin: '*'
