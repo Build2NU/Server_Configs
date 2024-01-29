@@ -3,6 +3,6 @@ Wants=network.target
 [Service]
 Restart=on-failure
 RestartSec=5s
-ExecStart=/usr/local/bin/mediamtx /usr/local/etc/mediamtx.yml
+ExecStart=/usr/local/bin/mediamtx/mediamtx /usr/local/bin/mediamtx/mediamtx.yml
 [Install]
 WantedBy=multi-user.target
