@@ -1,8 +1,7 @@
 sudo apt-get update -y
 sudo apt update && sudo apt upgrade -y
 sudo apt install ffmpeg -y
-sudo mv ./mediamtx /usr/local/bin/mediamtx
-sudo mv ./Other_Configs/mediamtx.service /etc/systemd/system/mediamtx.service
+sudo cp ./Other_Configs/mediamtx.service /etc/systemd/system/mediamtx.service
 sudo systemctl daemon-reload
 sudo systemctl enable mediamtx
 sudo systemctl start mediamtx
