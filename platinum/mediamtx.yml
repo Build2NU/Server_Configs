@@ -102,9 +102,9 @@ multicastRTCPPort: 8003
 # This can be generated with:
 # openssl genrsa -out server.key 2048
 # openssl req -new -x509 -sha256 -key server.key -out server.crt -days 3650
-serverKey: /usr/local/bin/mediamtx/certbot/testserver.2nuproductions.com/privkey.pem
+serverKey: /usr/local/bin/mediamtx/certbot/domain.com/privkey.pem
 # Path to the server certificate. This is needed only when encryption is "strict" or "optional".
-serverCert: /usr/local/bin/mediamtx/certbot/testserver.2nuproductions.com/fullchain.pem
+serverCert: /usr/local/bin/mediamtx/certbot/domain.com/fullchain.pem
 # Authentication methods. Available are "basic" and "digest".
 # "digest" doesn't provide any additional security and is available for compatibility reasons only.
 authMethods: [basic]
@@ -125,9 +125,9 @@ rtmpsAddress: :1936
 # This can be generated with:
 # openssl genrsa -out server.key 2048
 # openssl req -new -x509 -sha256 -key server.key -out server.crt -days 3650
-rtmpServerKey: /usr/local/bin/mediamtx/certbot/testserver.2nuproductions.com/privkey.pem
+rtmpServerKey: /usr/local/bin/mediamtx/certbot/domain.com/privkey.pem
 # Path to the server certificate. This is needed only when encryption is "strict" or "optional".
-rtmpServerCert: /usr/local/bin/mediamtx/certbot/testserver.2nuproductions.com/fullchain.pem
+rtmpServerCert: /usr/local/bin/mediamtx/certbot/domain.com/fullchain.pem
 
 ###############################################
 # Global settings -> HLS server
@@ -143,9 +143,9 @@ hlsEncryption: yes
 # This can be generated with:
 # openssl genrsa -out server.key 2048
 # openssl req -new -x509 -sha256 -key server.key -out server.crt -days 3650
-hlsServerKey: /usr/local/bin/mediamtx/certbot/testserver.2nuproductions.com/privkey.pem
+hlsServerKey: /usr/local/bin/mediamtx/certbot/domain.com/privkey.pem
 # Path to the server certificate.
-hlsServerCert: /usr/local/bin/mediamtx/certbot/testserver.2nuproductions.com/fullchain.pem
+hlsServerCert: /usr/local/bin/mediamtx/certbot/domain.com/fullchain.pem
 # By default, HLS is generated only when requested by a user.
 # This option allows to generate it always, avoiding the delay between request and generation.
 hlsAlwaysRemux: no
@@ -198,9 +198,9 @@ webrtcEncryption: yes
 # This can be generated with:
 # openssl genrsa -out server.key 2048
 # openssl req -new -x509 -sha256 -key server.key -out server.crt -days 3650
-webrtcServerKey: /usr/local/bin/mediamtx/certbot/testserver.2nuproductions.com/privkey.pem
+webrtcServerKey: /usr/local/bin/mediamtx/certbot/domain.com/privkey.pem
 # Path to the server certificate.
-webrtcServerCert: /usr/local/bin/mediamtx/certbot/testserver.2nuproductions.com/fullchain.pem
+webrtcServerCert: /usr/local/bin/mediamtx/certbot/domain.com/fullchain.pem
 # Value of the Access-Control-Allow-Origin header provided in every HTTP response.
 # This allows to play the WebRTC stream from an external website.
 webrtcAllowOrigin: '*'

@@ -6,4 +6,4 @@ sudo ufw allow 80
 sudo ufw allow 443
 read -p "Enter Domain: " domain
 sudo certbot certonly --standalone --config-dir /usr/local/bin/mediamtx/certbot -d $domain
-sudo sed -i 's/server.2nuproductions.com/$domain/' mediamtx.yml
+sudo sed -i 's/domain.com/${domain}/' mediamtx.yml
