@@ -73,7 +73,7 @@ runOnDisconnect:
 # Global settings -> RTSP server
 
 # Allow publishing and reading streams with the RTSP protocol.
-rtsp: yes
+rtsp: no
 # List of enabled RTSP transport protocols.
 # UDP is the most performant, but doesn't work when there's a NAT/firewall between
 # server and clients, and doesn't support encryption.
@@ -113,7 +113,7 @@ authMethods: [basic]
 # Global settings -> RTMP server
 
 # Allow publishing and reading streams with the RTMP protocol.
-rtmp: yes
+rtmp: no
 # Address of the RTMP listener. This is needed only when encryption is "no" or "optional".
 rtmpAddress: :1935
 # Encrypt connections with TLS (RTMPS).
@@ -133,7 +133,7 @@ rtmpServerCert: /usr/local/bin/mediamtx/certbot/live/domain.com/fullchain.pem
 # Global settings -> HLS server
 
 # Allow reading streams with the HLS protocol.
-hls: yes
+hls: no
 # Address of the HLS listener.
 hlsAddress: :8888
 # Enable TLS/HTTPS on the HLS server.
@@ -189,7 +189,7 @@ hlsDirectory: ''
 # Global settings -> WebRTC server
 
 # Allow publishing and reading streams with the WebRTC protocol.
-webrtc: yes
+webrtc: no
 # Address of the WebRTC HTTP listener.
 webrtcAddress: :8889
 # Enable TLS/HTTPS on the WebRTC server.
@@ -558,11 +558,4 @@ paths:
 
   # Settings under path "all_others" are applied to all paths that
   # do not match another entry.
-    
-  ~_stream$:
-    runOnReady: >
-        ffmpeg -i rtsp://127.0.0.1:$RTSP_PORT/$MTX_PATH -vcodec copy -c:a libopus -async 24 -ar 48000 -f rtsp rtsp://127.0.0.1:$RTSP_PORT/$MTX_PATH/monitor
-  ~_web$:
-    runOnReady: >
-        ffmpeg -i rtsp://127.0.0.1:$RTSP_PORT/$MTX_PATH -vcodec copy -c:a aac -b:a 320k -async 24 -ar 48000 -f rtsp rtsp://127.0.0.1:$RTSP_PORT/$MTX_PATH
   all_others:
