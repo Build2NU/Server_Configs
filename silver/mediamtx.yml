@@ -153,23 +153,23 @@ hlsAlwaysRemux: no
 # * mpegts - uses MPEG-TS segments, for maximum compatibility.
 # * fmp4 - uses fragmented MP4 segments, more efficient.
 # * lowLatency - uses Low-Latency HLS.
-hlsVariant: lowLatency
+hlsVariant: mpegts
 # Number of HLS segments to keep on the server.
 # Segments allow to seek through the stream.
 # Their number doesn't influence latency.
-hlsSegmentCount: 7
+hlsSegmentCount: 10
 # Minimum duration of each segment.
 # A player usually puts 3 segments in a buffer before reproducing the stream.
 # The final segment duration is also influenced by the interval between IDR frames,
 # since the server changes the duration in order to include at least one IDR frame
 # in each segment.
-hlsSegmentDuration: 1s
+hlsSegmentDuration: 5s
 # Minimum duration of each part.
 # A player usually puts 3 parts in a buffer before reproducing the stream.
 # Parts are used in Low-Latency HLS in place of segments.
 # Part duration is influenced by the distance between video/audio samples
 # and is adjusted in order to produce segments with a similar duration.
-hlsPartDuration: 200ms
+hlsPartDuration: 1000ms
 # Maximum size of each segment.
 # This prevents RAM exhaustion.
 hlsSegmentMaxSize: 50M
@@ -189,7 +189,7 @@ hlsDirectory: ''
 # Global settings -> WebRTC server
 
 # Allow publishing and reading streams with the WebRTC protocol.
-webrtc: yes
+webrtc: no
 # Address of the WebRTC HTTP listener.
 webrtcAddress: :8889
 # Enable TLS/HTTPS on the WebRTC server.
@@ -558,11 +558,4 @@ paths:
 
   # Settings under path "all_others" are applied to all paths that
   # do not match another entry.
-    
-  ~_stream$:
-    runOnReady: >
-        ffmpeg -i rtsp://127.0.0.1:$RTSP_PORT/$MTX_PATH -vcodec copy -c:a libopus -async 24 -ar 48000 -f rtsp rtsp://127.0.0.1:$RTSP_PORT/$MTX_PATH/monitor
-  ~_web$:
-    runOnReady: >
-        ffmpeg -i rtsp://127.0.0.1:$RTSP_PORT/$MTX_PATH -vcodec copy -c:a aac -b:a 320k -async 24 -ar 48000 -f rtsp rtsp://127.0.0.1:$RTSP_PORT/$MTX_PATH
   all_others:
