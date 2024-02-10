@@ -5,7 +5,7 @@ sudo git pull
 sudo chmod +x /usr/local/bin/mediamtx/mediamtx
 sudo chmod +x /usr/local/bin/mediamtx/mediam_install.sh
 sudo chmod +x /usr/local/bin/mediamtx/mediamtx_ssl_install.sh
-sudo ln -s /usr/local/bin/mediamtx/mediam_install.sh /usr/local/bin/mediamtx_install.sh
+sudo ln -s /usr/local/bin/mediamtx/mediamtx_install.sh /usr/local/bin/mediamtx_install.sh
 sudo ln -s /usr/local/bin/mediamtx/mediamtx_ssl_install.sh /usr/local/bin/mediamtx_ssl_install.sh
 sudo cp /usr/local/bin/mediamtx/services/mediamtx.service /etc/systemd/system/mediamtx.service
 sudo cp /usr/local/bin/mediamtx/$1/mediamtx.yml /usr/local/bin/mediamtx/mediamtx.yml
