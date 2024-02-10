@@ -3,7 +3,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install ffmpeg -y
 sudo git pull
 sudo chmod +x /usr/local/bin/mediamtx/mediamtx
-sudo chmod +x /usr/local/bin/mediamtx/mediam_install.sh
+sudo chmod +x /usr/local/bin/mediamtx/mediamtx_install.sh
 sudo chmod +x /usr/local/bin/mediamtx/mediamtx_ssl_install.sh
 sudo ln -s /usr/local/bin/mediamtx/mediamtx_install.sh /usr/local/bin/mediamtx_install.sh
 sudo ln -s /usr/local/bin/mediamtx/mediamtx_ssl_install.sh /usr/local/bin/mediamtx_ssl_install.sh
