@@ -1,3 +1,4 @@
+cd /usr/local/bin/mediamtx
 mkdir /usr/local/bin/mediamtx/certbot
 sudo snap install core; sudo snap refresh core
 sudo snap install --classic certbot
