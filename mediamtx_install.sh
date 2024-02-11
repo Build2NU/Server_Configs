@@ -17,6 +17,8 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install ffmpeg -y
 # move into the directory before pulling the repo, in case this script is run as an update.
 cd /usr/local/bin/mediamtx
+# Reset in case of local changes.
+git reset --hard HEAD
 sudo git pull
 sudo chmod +x /usr/local/bin/mediamtx/mediamtx
 sudo chmod +x /usr/local/bin/mediamtx/mediamtx_install.sh
