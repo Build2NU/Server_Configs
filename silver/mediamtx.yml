@@ -339,7 +339,7 @@ pathDefaults:
   # Default path settings -> Publisher source (when source is "publisher")
 
   # Allow another client to disconnect the current publisher and publish in its place.
-  overridePublisher: yes
+  overridePublisher: no
   # SRT encryption passphrase required to publish to this path
   srtPublishPassphrase:
 
