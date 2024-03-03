@@ -14,12 +14,12 @@ logDestinations: [stdout]
 logFile: mediamtx.log
 
 # Timeout of read operations.
-readTimeout: 10s
+readTimeout: 16s
 # Timeout of write operations.
-writeTimeout: 10s
+writeTimeout: 16s
 # Size of the queue of outgoing packets.
 # A higher value allows to increase throughput, a lower value allows to save RAM.
-writeQueueSize: 512
+writeQueueSize: 1024
 # Maximum size of outgoing UDP packets.
 # This can be decreased to avoid fragmentation on networks with a low UDP MTU.
 udpMaxPayloadSize: 1472
